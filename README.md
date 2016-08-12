@@ -9,6 +9,8 @@ Study Refactoring book and implement sample for java.
 ### 6.6 Split Temporary Variable
 ## ch 7: Moving Features Between Objects
 ### 7.1 Move Method
+## ch 8: Organizing Data
+### 8.1 Self Encapsulate Field
 ## ch 10: Making Method Calls Simpler
 ### 10.4 Separate Query from Modifier
 ## ch 11: Deal with Generalization
