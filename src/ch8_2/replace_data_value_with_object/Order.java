@@ -8,7 +8,7 @@ public class Order {
 	private Customer _customer;
 	
 	public Order (String customerName) {
-		_customer = new Customer(customerName);
+		_customer = Customer.getNamed(customerName);
 	}
 	
 	public String getCustomerName() {
@@ -16,7 +16,7 @@ public class Order {
 	}
 	
 	public void setCustomer(String customerName) {
-		_customer = new Customer(customerName);
+		_customer = Customer.getNamed(customerName);
 	}
 	
 	private static int numberOfOrdersFor(Collection orders, String customerName) {
