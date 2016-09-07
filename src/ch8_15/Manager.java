@@ -7,4 +7,8 @@ public class Manager extends EmployeeType {
 		return EmployeeType.MANAGER;
 	}
 
+	@Override
+	int payAmount(Employee employee) {
+		return employee.getMonthlySalary() + employee.getBonus();
+	}
 }

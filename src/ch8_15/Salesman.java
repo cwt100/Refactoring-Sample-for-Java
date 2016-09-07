@@ -6,5 +6,10 @@ public class Salesman extends EmployeeType {
 	int getTypeCode() {
 		return EmployeeType.SALESMAN;
 	}
+	
+	@Override
+	int payAmount(Employee employee) {
+		return employee.getMonthlySalary() + employee.getCommission();
+	}
 
 }

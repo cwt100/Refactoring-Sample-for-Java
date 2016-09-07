@@ -7,6 +7,7 @@ abstract class EmployeeType {
 	static final int MANAGER = 2;
 	
 	abstract int getTypeCode();
+	abstract int payAmount(Employee employee);
 	
 	static EmployeeType newType(int code) {
 		switch (code) {
@@ -18,19 +19,6 @@ abstract class EmployeeType {
 			return new Manager();
 		default:
 			throw new IllegalArgumentException("Incorrect Employee Code");
-		}
-	}
-	
-	int payAmount(Employee employee) {
-		switch (getTypeCode()) {
-		case EmployeeType.ENGINNER:
-			return employee.getMonthlySalary();
-		case EmployeeType.SALESMAN:
-			return employee.getMonthlySalary() + employee.getCommission();
-		case EmployeeType.MANAGER:
-			return employee.getMonthlySalary() + employee.getBonus();
-		default:
-			throw new RuntimeException("Incorrect Employee");
 		}
 	}
 }

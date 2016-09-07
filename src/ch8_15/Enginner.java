@@ -6,5 +6,10 @@ public class Enginner extends EmployeeType {
 	int getTypeCode() {
 		return EmployeeType.ENGINNER;
 	}
+	
+	@Override
+	int payAmount(Employee employee) {
+		return employee.getMonthlySalary();
+	}
 
 }
