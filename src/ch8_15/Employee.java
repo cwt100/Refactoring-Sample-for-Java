@@ -20,16 +20,19 @@ public class Employee {
 		_type = EmployeeType.newType(type);
 	}
 	
+	int getMonthlySalary() {
+		return _monthlySalary;
+	}
+	
+	int getCommission() {
+		return _commission;
+	}
+	
+	int getBonus() {
+		return _bonus;
+	}
+	
 	int payAmount() {
-		switch (_type.getTypeCode()) {
-		case EmployeeType.ENGINNER:
-			return _monthlySalary;
-		case EmployeeType.SALESMAN:
-			return _monthlySalary + _commission;
-		case EmployeeType.MANAGER:
-			return _monthlySalary + _bonus;
-		default:
-			throw new RuntimeException("Incorrect Employee");
-		}
+		return _type.payAmount(this);
 	}
 }
