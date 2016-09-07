@@ -12,6 +12,15 @@ public class Employee {
 	private int _bonus;
 	
 	Employee(int type) {
+		setType(type);
+	}
+	
+	//Step 1: self encapsulate.
+	int getType() {
+		return _type;
+	}
+	
+	void setType(int type) {
 		_type = type;
 	}
 	
