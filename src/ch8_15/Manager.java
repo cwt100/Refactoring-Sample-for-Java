@@ -4,7 +4,7 @@ public class Manager extends EmployeeType {
 
 	@Override
 	int getTypeCode() {
-		return Employee.MANAGER;
+		return EmployeeType.MANAGER;
 	}
 
 }

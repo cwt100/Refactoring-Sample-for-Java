@@ -2,10 +2,6 @@ package ch8_15;
 
 public class Employee {
 	
-	static final int ENGINNER = 0;
-	static final int SALESMAN = 1;
-	static final int MANAGER = 2;
-	
 	private EmployeeType _type;
 	private int _monthlySalary;
 	private int _commission;
@@ -21,28 +17,16 @@ public class Employee {
 	}
 	
 	void setType(int type) {
-		switch (type) {
-		case ENGINNER:
-			_type = new Enginner();
-			break;
-		case SALESMAN:
-			_type = new Salesman();
-			break;
-		case MANAGER:
-			_type = new Manager();
-			break;
-		default:
-			throw new IllegalArgumentException("Incorrect Employee Code");
-		}
+		_type = EmployeeType.newType(type);
 	}
 	
 	int payAmount() {
 		switch (_type.getTypeCode()) {
-		case ENGINNER:
+		case EmployeeType.ENGINNER:
 			return _monthlySalary;
-		case SALESMAN:
+		case EmployeeType.SALESMAN:
 			return _monthlySalary + _commission;
-		case MANAGER:
+		case EmployeeType.MANAGER:
 			return _monthlySalary + _bonus;
 		default:
 			throw new RuntimeException("Incorrect Employee");

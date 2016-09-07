@@ -4,7 +4,7 @@ public class Salesman extends EmployeeType {
 
 	@Override
 	int getTypeCode() {
-		return Employee.SALESMAN;
+		return EmployeeType.SALESMAN;
 	}
 
 }
