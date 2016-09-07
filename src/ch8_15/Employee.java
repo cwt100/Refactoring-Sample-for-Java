@@ -6,7 +6,7 @@ public class Employee {
 	static final int SALESMAN = 1;
 	static final int MANAGER = 2;
 	
-	private int _type;
+	private EmployeeType _type;
 	private int _monthlySalary;
 	private int _commission;
 	private int _bonus;
@@ -17,15 +17,27 @@ public class Employee {
 	
 	//Step 1: self encapsulate.
 	int getType() {
-		return _type;
+		return _type.getTypeCode();
 	}
 	
 	void setType(int type) {
-		_type = type;
+		switch (type) {
+		case ENGINNER:
+			_type = new Enginner();
+			break;
+		case SALESMAN:
+			_type = new Salesman();
+			break;
+		case MANAGER:
+			_type = new Manager();
+			break;
+		default:
+			throw new IllegalArgumentException("Incorrect Employee Code");
+		}
 	}
 	
 	int payAmount() {
-		switch (_type) {
+		switch (_type.getTypeCode()) {
 		case ENGINNER:
 			return _monthlySalary;
 		case SALESMAN:
